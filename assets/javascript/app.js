@@ -1,6 +1,3 @@
-const quizContainer = document.getElementById('quiz');
-const resultsContainer = document.getElementById('results');
-const submitButton = document.getElementById('submit');
 
 var timer="";
 var question="";
@@ -64,9 +61,12 @@ var Questions = [
 
 function start() 
 {
-    $("#submitButton").on("click", {
-        $
-    })
+    $("#submitButton").on("click", $(".container").show(Questions)
+    
 }
+
+
+
+
 //beginning
 
