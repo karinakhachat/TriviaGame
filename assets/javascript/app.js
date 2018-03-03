@@ -5,6 +5,7 @@ var answer=[];
 var correctans=[];
 var userselect=0;
 
+function selectors(){
 var Questions = [
     {
         question: "What is the only state in America that begins with the letter p?",
@@ -55,14 +56,19 @@ var Questions = [
         correctans: [2].answer
     }
 
-];
+]
+    Questions.forEach(function(){
+    $(".container").append('<label><input type="radio" name="questions" value=""/></label>');
+    })
 
-
+}
+//end of selector function
+selectors()
 
 function start() 
 {
-    $("#submitButton").on("click", $(".container").show(Questions)
-    
+    $("#submit").bind("click", function(){ $(".container").append(Questions)})
+    setTimeout()
 }
 
 
