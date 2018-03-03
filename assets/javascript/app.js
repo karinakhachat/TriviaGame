@@ -1,16 +1,16 @@
 
-var timer="";
-var question="";
-var answer=[];
-var correctans=[];
-var userselect=0;
+var timer = "";
+var correctans = 0;
+var wrongans = 0;
+var userselect = 0;
 
-function selectors(){
+
+
 var Questions = [
     {
         question: "What is the only state in America that begins with the letter p?",
         answer: ["Prague", "Pago Pago", "Philadlephia", "Pennsylvania"],
-        correctans: [3].answer
+        correctans: answer[3]
     },
     {
         question: "What is the worlds largest island?",
@@ -18,7 +18,8 @@ var Questions = [
         correctans: [2].answer
     },
 
-    {   question: "What is the diameter of the Earth?",
+    {
+        question: "What is the diameter of the Earth?",
         answer: ["8,000 miles", "20,000 miles", "6,000 miles", "100,000 miles"],
         correctans: [1].answer
     },
@@ -30,7 +31,7 @@ var Questions = [
         correctans: [3].answer
     },
 
-    { 
+    {
         question: "What is the capital of Armenia",
         answer: ["Tel-aviv", "Yerevan", "Moscow", "Mexico-city"],
         correctans: [2].answer
@@ -57,19 +58,32 @@ var Questions = [
     }
 
 ]
-    Questions.forEach(function(){
-    $(".container").append('<label><input type="radio" name="questions" value=""/></label>');
-    })
-
+console.log(Questions.answer)
+function button() {
+    for (i = 0; i < answer.length; i++) {
+        $(".container").append('<label><input type="radio" name="questions" value=""/></label>');
+    }
 }
+
 //end of selector function
-selectors()
 
-function start() 
-{
-    $("#submit").bind("click", function(){ $(".container").append(Questions)})
-    setTimeout()
-}
+
+// function start() {
+    $("#submit").on("click", function () { 
+        // $(".container").append(Questions);
+        console.log("hello");
+    })
+    
+    //setTimeout(function(){ $(".container"), 3000;{
+    //$("")
+
+// }
+
+
+
+
+
+
 
 
 
