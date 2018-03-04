@@ -73,7 +73,6 @@ function Start(){
 
    function fivemin(){
        $("#timer").append("<h1>You have five minutes<h1>")
-
     }
 
 })
