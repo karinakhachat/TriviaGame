@@ -2,10 +2,11 @@
 var timer = "";
 var counter=0;
 var correctans = 0;
+var button="";
 var wrongans = 0;
 var userselect = 0;
 
-function game(){
+
 
 var Questions = [
     {
@@ -61,22 +62,29 @@ var Questions = [
 ]
 console.log(Questions)
 //works
-function button() {
-    for (i = 0; i < answer.length; i++) {
+    function radiobutton(){for (i = 0; i < answer.length; i++) {
         answer.append('<label><input type="radio" name="questions" value=""/></label>');
+}
+
+function Start(){
+    $("#submit").click(function(){
+    $(".container").append(Questions);
+    setTimeout(fivemin, 10000*5); 
+
+   function fivemin(){
+       $("#timer").append("<h1>You have five minutes<h1>")
+
     }
 
-}
-//end of selector function
-
-
-// function start() {
-$("#submit").click(function() {
-    $(".container").replaceWith(Questions);
 })
-}   
+}}
 
-// }
+
+
+
+
+
+
 
 
 
