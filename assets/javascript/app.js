@@ -62,13 +62,19 @@ console.log(Questions)
     //works
 
 //wrapt this in the $(document).ready test
+$(document).ready(
 
-function radiobutton() {
+    function radiobutton() {
     //test your values
-    console.log(answer.length);
-    for (i = 0; i < answer.length; i++) {
-        answer.append('<label><input type="radio" name="questions" value=""/></label>');
+    console.log(Questions.answer.length);
+    for (Questions.keys(answer.length).forEach(function(keys){
+    Questions.append('<label><input type="radio" name="questions" value=""/></label>');
+    
+    
     }
+
+    radiobutton();
+
 
     function Start() {
 
@@ -90,12 +96,12 @@ function radiobutton() {
         })
     }
     //call the function
-    Start();
+    $("#sumbit").on("click", Start());
 
 }
 
 //call the function
-radiobutton()
 
 
+)
 //beginning
