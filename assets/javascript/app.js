@@ -1,15 +1,13 @@
-
 var timer = "";
-var counter=0;
+var counter = 0;
 var correctans = 0;
-var button="";
+var button = "";
 var wrongans = 0;
 var userselect = 0;
 
 
 
-var Questions = [
-    {
+var Questions = [{
         question: "What is the only state in America that begins with the letter p?",
         answer: ["Prague", "Pago Pago", "Philadlephia", "Pennsylvania"],
         correctans: [3].answer
@@ -61,38 +59,43 @@ var Questions = [
 
 ]
 console.log(Questions)
-//works
-    function radiobutton(){for (i = 0; i < answer.length; i++) {
+    //works
+
+//wrapt this in the $(document).ready test
+
+function radiobutton() {
+    //test your values
+    console.log(answer.length);
+    for (i = 0; i < answer.length; i++) {
         answer.append('<label><input type="radio" name="questions" value=""/></label>');
-}
-
-function Start(){
-    $("#submit").click(function(){
-    $(".container").append(Questions);
-    setTimeout(fivemin, 10000*5); 
-
-   function fivemin(){
-       $("#timer").append("<h1>You have five minutes<h1>")
     }
 
-})
-}}
+    function Start() {
 
+        //Use console.log like this to show which parts of your code is running.
+        console.log("start called");
 
+        $("#submit").click(function() {
+            $(".container").append(Questions);
+            // setTimeout(fivemin, 10000 * 5);
+            setTimeout(fivemin, 100 * 5); // short test
 
+            console.log("Timeout done")
 
+            function fivemin() {
+                $("#timer").append("<h1>You have five minutes<h1>")
 
+            }
 
+        })
+    }
+    //call the function
+    Start();
 
+}
 
-
-
-
-
-
-
-
+//call the function
+radiobutton()
 
 
 //beginning
-
