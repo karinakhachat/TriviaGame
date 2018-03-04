@@ -1,16 +1,17 @@
 
 var timer = "";
+var counter=0;
 var correctans = 0;
 var wrongans = 0;
 var userselect = 0;
 
-
+function game(){
 
 var Questions = [
     {
         question: "What is the only state in America that begins with the letter p?",
         answer: ["Prague", "Pago Pago", "Philadlephia", "Pennsylvania"],
-        correctans: answer[3]
+        correctans: [3].answer
     },
     {
         question: "What is the worlds largest island?",
@@ -58,24 +59,22 @@ var Questions = [
     }
 
 ]
-console.log(Questions.answer)
+console.log(Questions)
+//works
 function button() {
     for (i = 0; i < answer.length; i++) {
-        $(".container").append('<label><input type="radio" name="questions" value=""/></label>');
+        answer.append('<label><input type="radio" name="questions" value=""/></label>');
     }
-}
 
+}
 //end of selector function
 
 
 // function start() {
-    $("#submit").on("click", function () { 
-        // $(".container").append(Questions);
-        console.log("hello");
-    })
-    
-    //setTimeout(function(){ $(".container"), 3000;{
-    //$("")
+$("#submit").click(function() {
+    $(".container").replaceWith(Questions);
+})
+}   
 
 // }
 
