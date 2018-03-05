@@ -73,7 +73,6 @@ $(document).ready(function() {
 
 //      }
 
-
     function Start() {
 
                 //Use console.log like this to show which parts of your code is running.
@@ -84,7 +83,7 @@ $(document).ready(function() {
                      console.log(Questions);
                      //it logs them but wont append
                     // setTimeout(fivemin, 10000 * 5);
-                    setTimeout(fivemin, 100 * 5); // short test
+                    setTimeout(fivemin, 10000 * 5); // short test
 
                     console.log("Timeout done")
 
