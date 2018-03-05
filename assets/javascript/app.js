@@ -1,46 +1,49 @@
+
+$(document).ready(function() {
 var timer = "";
 var counter = 0;
 var correctans = 0;
 var button = "";
 var wrongans = 0;
 var userselect = 0;
+var interval=0;
 
 
 
 var Questions = [{
     question: "What is the only state in America that begins with the letter p?",
     answer: ["Prague", "Pago Pago", "Philadlephia", "Pennsylvania"],
-    correctans: [3].answer
+    correctans: "Pennsylvania"
 },
 {
     question: "What is the worlds largest island?",
     answer: ["Fiji", "Greenland", "Madagascar", "Borneo"],
-    correctans: [2].answer
+    correctans: "Greenland"
 },
 
 {
     question: "What is the diameter of the Earth?",
     answer: ["8,000 miles", "20,000 miles", "6,000 miles", "100,000 miles"],
-    correctans: [1].answer
+    correctans: "8,000 miles"
 },
 
 
 {
     question: "What is the worlds largest ocean?",
     answer: ["Atlantic", "Arctic", "Pacific", "Indian"],
-    correctans: [3].answer
+    correctans: "Pacific"
 },
 
 {
     question: "What is the capital of Armenia",
     answer: ["Tel-aviv", "Yerevan", "Moscow", "Mexico-city"],
-    correctans: [2].answer
+    correctans: "Yerevan"
 },
 
 {
     question: "What country is Prague in?",
     answer: ["Czech-Republic", "Russia", "Mexico", "India"],
-    correctans: [1].answer
+    correctans: "Czech-Republic"
 
 
 },
@@ -48,24 +51,23 @@ var Questions = [{
 {
     question: "What color is a Welsh Poppy Flower?",
     answer: ["Red", "Pink", "Orange", "Yellow"],
-    correctans: [4].answer
+    correctans: "Yellow"
 },
 
 {
     question: "Name the three primary colours?",
     answer: ["Yellow, Orange, Green", "Blue, Red, Yellow", "Brown, White, Red", "Yellow, Blue, Green"],
-    correctans: [2].answer
+    correctans: "Blue, Red, Yellow"
 }
 
 ]
 console.log(Questions)
 //works
 
-//wrapt this in the $(document).ready test
-$(document).ready(function() {
+
+
 
     //function radiobutton() {
-        //test your values
         //console.log(Questions.answer.length);
         //for(Questions.keys(answer.length).forEach(function (keys) {
             //Questions.append('<label><input type="radio" name="questions" value=""/></label>');
@@ -79,7 +81,7 @@ $(document).ready(function() {
                 console.log("start called");
                 //submit buttons is responsive but not working as expected yet
                 $("#submit").click(function () {
-                    $("#pleasework").data(Questions);
+                    $(".container").append(Questions); //currently super broken i have tried append, date, text
                      console.log(Questions);
                      //it logs them but wont append
                     // setTimeout(fivemin, 10000 * 5);
@@ -94,6 +96,10 @@ $(document).ready(function() {
 
                 })
             }
+
+            $("#submit").click(function () {
+                $(".questions").append(Questions); //currently super broken i have tried append, date, text
+                 console.log(Questions);
     //call the function
 Start();
 //call the function
