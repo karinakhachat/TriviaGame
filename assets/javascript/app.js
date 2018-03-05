@@ -79,11 +79,11 @@ $(document).ready(function() {
                 console.log("start called");
                 //submit buttons is responsive but not working as expected yet
                 $("#submit").click(function () {
-                    $("#pleasework").append(Questions);
+                    $("#pleasework").data(Questions);
                      console.log(Questions);
                      //it logs them but wont append
                     // setTimeout(fivemin, 10000 * 5);
-                    setTimeout(fivemin, 10000 * 5); // short test
+                    setTimeout(fivemin, 10000 * 5); // is working as expected!
 
                     console.log("Timeout done")
 
