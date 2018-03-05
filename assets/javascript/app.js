@@ -78,10 +78,11 @@ $(document).ready(function() {
 
                 //Use console.log like this to show which parts of your code is running.
                 console.log("start called");
-
+                //submit buttons is responsive but not working as expected yet
                 $("#submit").click(function () {
                     $("#pleasework").append(Questions);
-                console.log(Questions);
+                     console.log(Questions);
+                     //it logs them but wont append
                     // setTimeout(fivemin, 10000 * 5);
                     setTimeout(fivemin, 100 * 5); // short test
 
