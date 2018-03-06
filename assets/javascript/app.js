@@ -61,45 +61,34 @@ $(document).ready(function () {
     }
 
     ]
-    console.log(Questions)
-    //works
-
-
-    //function radiobutton() {
-        //Questions.forEach(function (answerObj)
-         //{
-           // $(".answers").append(answerObj.answer) for (i=0; 0 < answer.length; i++)
-            //.append('<label><input type="radio" name="questions" value=""/></label>');
-        //});
-    //}
-
-    function Start() {
-
-        //Use console.log like this to show which parts of your code is running.
-        console.log("start called");
-        //submit buttons is responsive but not working as expected yet
-
-        //it logs them but wont append
-        // setTimeout(fivemin, 10000 * 5);
-        setTimeout(fivemin, 10000 * 5); // is working as expected!
-
-        console.log("Timeout done")
-        radiobutton();
-       
-        function fivemin() {
-            $("#timer").append("<h1>You have five minutes<h1>")
-
-        }
-    }
-
-    $("#submit").click(function () {
-        $(".questions").html("<h1>" + Questions.question.answer + "</h1>"); //currently super broken i have tried append, date, text
+ 
+    $("#submit").click(function Start() {
+        $(".questions").html("<h1>" + Questions[0].question + "</h1>"); //working
         console.log(Questions);
+        
+        $(".answers").html("<h1>"+ Questions[0].answer + "</h1>");
+        function fivemin(){
+        setTimeout(fivemin, 10000 * 5);
+        }
+
+        function radiobutton() {
+            Questions.forEach(function (answerObj)
+             {for (var i = 0; i < answer.length; i++) {
+                result.append('<label><input type="radio" name="usernames" value="' + answer[i] + '" /> ' + usernames[i] + '</label>');
+              
+         Start();   
+        }
+        } 
+            )};  
+        });
         //call the function
 
     
-        Start();
+        
         //call the function
 
-    });
+  
+    
+
+
 });
