@@ -1,7 +1,6 @@
 
 $(document).ready(function () {
     var timer = 50000;
-    var counter = 0;
     var unchecked = 0;
     var correctans = 0;
     var wrongans = 0;
@@ -12,37 +11,37 @@ $(document).ready(function () {
     var Questions = [{
         question: "What is the only state in America that begins with the letter p?",
         answer: ["Prague", "Pago Pago", "Philadlephia", "Pennsylvania"],
-        correctans: "Pennsylvania"
+        correctAns: "Pennsylvania"
     },
     {
         question: "What is the worlds largest island?",
         answer: ["Fiji", "Greenland", "Madagascar", "Borneo"],
-        correctans: "Greenland"
+        correctAns: "Greenland"
     },
 
     {
         question: "What is the diameter of the Earth?",
         answer: ["8,000 miles", "20,000 miles", "6,000 miles", "100,000 miles"],
-        correctans: "8,000 miles"
+        correctAns: "8,000 miles"
     },
 
 
     {
         question: "What is the worlds largest ocean?",
         answer: ["Atlantic", "Arctic", "Pacific", "Indian"],
-        correctans: "Pacific"
+        correctAns: "Pacific"
     },
 
     {
         question: "What is the capital of Armenia",
         answer: ["Tel-aviv", "Yerevan", "Moscow", "Mexico-city"],
-        correctans: "Yerevan"
+        correctAns: "Yerevan"
     },
 
     {
         question: "What country is Prague in?",
         answer: ["Czech-Republic", "Russia", "Mexico", "India"],
-        correctans: "Czech-Republic"
+        correctAns: "Czech-Republic"
 
 
     },
@@ -70,8 +69,8 @@ $(document).ready(function () {
 
             }
         }
-        //interval= setInterval(10000 * 5);               
-        //$("#timer").text(interval)
+        interval= setInterval(10000 * 5);               
+        $("#timer").text(interval)
         $("#submit").hide();
         $("#results").append(btn);
     }
@@ -90,31 +89,31 @@ $(document).ready(function () {
     })
 
     //compares the correctans with user
-    function Compare() { 
+    function compare() { 
         $(".questions").empty();
         $("#results").empty();
 
         $.each($("input[class='question']:checked"), function () {
-            for (var i = 0; i < Questions[i].correctans.length; i++)
+            for (var i = 0; i < Questions[i].correctAns; i++)
             console.log(i);
-            if ($(this).val() === questions[i].correctans) {
-                counter.correctans++;
+            if ($(this).val() === Questions[i].correctAns) {
+                correctans++;
                 console.log(correctans)
             }
             else {
-                counter.wrongans++;
+                wrongans++;
             }
 
         })
         $.each($("input[class='question']:unchecked"), function () {
-            counter.unchecked++;
+            unchecked++;
         })
 
-        $("#results").append(counter);  //the only working part of the function   
+        $("#results").append();  //the only working part of the function   
     
     }
     //$("#button").click(function(){
-        Compare();
+        compare();
 
     
     //})
