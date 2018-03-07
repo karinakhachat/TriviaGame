@@ -81,6 +81,10 @@ $(document).ready(function () {
      //working successfully as expected!   
     })
 
+    $("#submit").click(function(){
+        Compare();
+        console.log(Compare)
+    })
     //compares the correctans with user
     function Compare() {
         $.each($("input[name='question-0']:checked"), function () {
@@ -89,14 +93,10 @@ $(document).ready(function () {
             }
             else {
                 counter.incorrect++;
-
-
-            
             }
+            
         })
-
-
-    };
+    }
 
 
 });
