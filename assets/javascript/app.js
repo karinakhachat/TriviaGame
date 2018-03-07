@@ -1,12 +1,12 @@
 
 $(document).ready(function () {
-    var timer = "";
+    var timer = 50000;
     var counter = 0;
     var correctans = 0;
     var button = "";
     var wrongans = 0;
     var userselect = 0;
-    var interval = 0;
+    var interval;
 
 
 
@@ -66,46 +66,37 @@ $(document).ready(function () {
         for (var i = 0; i < Questions.length; i++) {
             $(".questions").append("<p>" + Questions[i].question + "<p>"); //working
             console.log(Questions);
-        for (var k = 0; k < Questions[i].answer.length; k++) {
+            for (var k = 0; k < Questions[i].answer.length; k++) {
                 $(".questions").append("<input type='radio' name='question-" + i + "'value='" + Questions[i].answer[k] + "''>" + Questions[i].answer[k]);
-        
+
             }
-            //compares the correctans with user
-            function Compare (){
-                $.each($("input[name='question-0']:checked"), function() {
-                if ($(this).val() === questions[0].correctans) {
-                  counter.correct++;
-                }
-                else {
+
+        }
+    }
+
+    //call the function
+    $("#submit").click(function () {
+        start();
+
+    })
+
+    //compares the correctans with user
+    function Compare() {
+        $.each($("input[name='question-0']:checked"), function () {
+            if ($(this).val() === questions[i].correctans) {
+                counter.correct++;
+            }
+            else {
                 counter.incorrect++;
 
-                $.each($("input[name='question-0']:checked"), function() {
+                $.each($("input[name='question-0']:checked"), function () {
                     console.log($(this).val());
-                        });
-                }
-              })
-
-
-
-
-        // function fivemin() {
-        //     var timer = setInterval(fivemin, 10000 * 5);
-        //     timer--;
-        //     $("#timer").append(timer)
-        // }
-        // fivemin();
-        // console.log(fivemin)
-        
+                });
             }
-            
-        
-  
+        })
+
+
     };
-  
-    //call the function
-  $("#submit").click(function(){
-        start();
-  })
 
 
 });
