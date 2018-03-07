@@ -71,7 +71,7 @@ $(document).ready(function () {
         }
                     interval= setInterval(10000 * 5);               
                 $("#timer").text(interval)
-                $("#submit").attr("disabled", "disabled");
+                $("#submit").hide();
                 
             }
 
