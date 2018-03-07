@@ -73,9 +73,8 @@ $(document).ready(function () {
         }
                     interval= setInterval(10000 * 5);               
                 $("#timer").text(interval)
-                $("#submit").click(function (){
-                    Compare();
-                })
+                $("#submit").attr("disabled", "disabled");
+                
             }
 
     //call the function
