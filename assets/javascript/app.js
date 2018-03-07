@@ -63,24 +63,32 @@ $(document).ready(function () {
     ]
  
     $("#submit").click(function Start() {
-        $(".questions").html("<h1>" + Questions[0].question + "</h1>"); //working
-        console.log(Questions);
-        
-        $(".answers").html("<h1>"+ Questions[0].answer + "</h1>");
-        function fivemin(){
-        setTimeout(fivemin, 10000 * 5);
-        }
 
+        for (var i=0; i < Questions.length; i++){
+        $(".questions").html("<h1>" + Questions[i].question + "</h1>"); //working
+        console.log(Questions);
+        }
+        
+        for (var i=0; i < Questions.length; i++)
+        $(".answers").html("<h1>"+ Questions[i].answer + "</h1>");
+        function fivemin(){
+        var timer= setInterval(fivemin, 10000 * 5);
+        timer--;
+        $("#timer").append(timer)
+        }
+        fivemin();
+        console.log(fivemin)
         function radiobutton() {
             Questions.forEach(function (answerObj)
              {for (var i = 0; i < answer.length; i++) {
                 result.append('<label><input type="radio" name="usernames" value="' + answer[i] + '" /> ' + usernames[i] + '</label>');
               
-         Start();   
+           
         }
         } 
             )};  
         });
+        Start(); 
         //call the function
 
     
