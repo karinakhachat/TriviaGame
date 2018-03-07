@@ -2,7 +2,7 @@
 $(document).ready(function () {
     var timer = 50000;
     var counter = 0;
-    var unchecked=0;
+    var unchecked = 0;
     var correctans = 0;
     var wrongans = 0;
     var interval;
@@ -60,48 +60,55 @@ $(document).ready(function () {
     }
 
     ]
-    function start(){
+    function start() {
 
         for (var i = 0; i < Questions.length; i++) {
             $(".questions").append("<p>" + Questions[i].question + "<p>"); //working
             console.log(Questions);
             for (var k = 0; k < Questions[i].answer.length; k++) {
-                $(".questions").append("<input type='radio' name='question-" + i + "'value='" + Questions[i].answer[k] + "''>" + Questions[i].answer[k]);
+                $(".questions").append("<input type='radio' class='question' name='question-" + i + "'value='" + Questions[i].answer[k] + "''>" + Questions[i].answer[k]);
 
-            }       
-        }
-                    interval= setInterval(10000 * 5);               
-                $("#timer").text(interval)
-                $("#submit").hide();
-                
             }
+        }
+        //interval= setInterval(10000 * 5);               
+        //$("#timer").text(interval)
+        $("#submit").hide();
+        $("#results").append(btn);
+    }
+
+    var btn = document.createElement("BUTTON");  
+    btn.id='button';      
+    var t = document.createTextNode("CLICK ME");       
+    btn.appendChild(t);
+    
 
     //call the function
     $("#submit").click(function () {
         start();
-     //working successfully as expected!   
+        //working successfully as expected!   
     })
 
-    $("#submit").click(function(){
-        Compare();
-        console.log(Compare)
-    })
+
     //compares the correctans with user
     function Compare() {
-        $.each($("input[name='question-0']:checked"), function () {
+        $.each($("input[class='question']:checked"), function () {
             if ($(this).val() === questions[i].correctans) {
                 counter.correctans++;
             }
             else {
                 counter.wrongans++;
             }
-            
+
         })
-        $.each($("input[name='question-0']:unchecked"), function () {
+        $.each($("input[class='question']:unchecked"), function () {
             counter.unchecked++;
-            
-   
         })
+    }
+
+    $("#button").click(function(){
+        Compare();
+    })
+
 
 
 
