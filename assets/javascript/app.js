@@ -69,22 +69,19 @@ $(document).ready(function () {
             for (var k = 0; k < Questions[i].answer.length; k++) {
                 $(".questions").append("<input type='radio' name='question-" + i + "'value='" + Questions[i].answer[k] + "''>" + Questions[i].answer[k]);
 
-            }
-
+            }       
         }
-    }
-
-    function fivemin() {
-        timer = setInterval(1000*5);
-        $("#timer").text(timer);
-    }
-    fivemin();
-    console.log(fivemin)
+                    interval= setInterval(10000 * 5);               
+                $("#timer").text(interval)
+                $("#submit").click(function (){
+                    Compare();
+                })
+            }
 
     //call the function
     $("#submit").click(function () {
         start();
-        fivemin()
+        
 
     })
 
