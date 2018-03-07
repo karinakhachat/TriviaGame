@@ -3,9 +3,7 @@ $(document).ready(function () {
     var timer = 50000;
     var counter = 0;
     var correctans = 0;
-    var button = "";
     var wrongans = 0;
-    var userselect = 0;
     var interval;
 
 
@@ -80,8 +78,7 @@ $(document).ready(function () {
     //call the function
     $("#submit").click(function () {
         start();
-        
-
+     //working successfully as expected!   
     })
 
     //compares the correctans with user
@@ -93,9 +90,8 @@ $(document).ready(function () {
             else {
                 counter.incorrect++;
 
-                $.each($("input[name='question-0']:checked"), function () {
-                    console.log($(this).val());
-                });
+
+            
             }
         })
 
