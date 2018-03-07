@@ -61,7 +61,7 @@ $(document).ready(function () {
     }
 
     ]
-    function start() {
+    function start(){
 
         for (var i = 0; i < Questions.length; i++) {
             $(".questions").append("<p>" + Questions[i].question + "<p>"); //working
@@ -74,9 +74,17 @@ $(document).ready(function () {
         }
     }
 
+    function fivemin() {
+        timer = setInterval(1000*5);
+        $("#timer").text(timer);
+    }
+    fivemin();
+    console.log(fivemin)
+
     //call the function
     $("#submit").click(function () {
         start();
+        fivemin()
 
     })
 
