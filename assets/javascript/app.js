@@ -81,6 +81,7 @@ $(document).ready(function () {
     var t = document.createTextNode("CLICK ME");       
     btn.appendChild(t);
     
+    
 
     //call the function
     $("#submit").click(function () {
@@ -88,12 +89,17 @@ $(document).ready(function () {
         //working successfully as expected!   
     })
 
-
     //compares the correctans with user
-    function Compare() {
+    function Compare() { 
+        $(".questions").empty();
+        $("#results").empty();
+
         $.each($("input[class='question']:checked"), function () {
+            for (var i = 0; i < Questions[i].correctans.length; i++)
+            console.log(i);
             if ($(this).val() === questions[i].correctans) {
                 counter.correctans++;
+                console.log(correctans)
             }
             else {
                 counter.wrongans++;
@@ -103,11 +109,15 @@ $(document).ready(function () {
         $.each($("input[class='question']:unchecked"), function () {
             counter.unchecked++;
         })
-    }
 
-    $("#button").click(function(){
+        $("#results").append(counter);  //the only working part of the function   
+    
+    }
+    //$("#button").click(function(){
         Compare();
-    })
+
+    
+    //})
 
 
 
