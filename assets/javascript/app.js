@@ -61,42 +61,51 @@ $(document).ready(function () {
     }
 
     ]
- 
-    $("#submit").click(function Start() {
+    function start() {
 
-        for (var i=0; i < Questions.length; i++){
-        $(".questions").html("<h1>" + Questions[i].question + "</h1>"); //working
-        console.log(Questions);
-        }
+        for (var i = 0; i < Questions.length; i++) {
+            $(".questions").append("<p>" + Questions[i].question + "<p>"); //working
+            console.log(Questions);
+        for (var k = 0; k < Questions[i].answer.length; k++) {
+                $(".questions").append("<input type='radio' name='question-" + i + "'value='" + Questions[i].answer[k] + "''>" + Questions[i].answer[k]);
         
-        for (var i=0; i < Questions.length; i++)
-        $(".answers").html("<h1>"+ Questions[i].answer + "</h1>");
-        function fivemin(){
-        var timer= setInterval(fivemin, 10000 * 5);
-        timer--;
-        $("#timer").append(timer)
-        }
-        fivemin();
-        console.log(fivemin)
-        function radiobutton() {
-            Questions.forEach(function (answerObj)
-             {for (var i = 0; i < answer.length; i++) {
-                result.append('<label><input type="radio" name="usernames" value="' + answer[i] + '" /> ' + usernames[i] + '</label>');
-              
-           
-        }
-        } 
-            )};  
-        });
-        Start(); 
-        //call the function
+            }
+            //compares the correctans with user
+            function Compare (){
+                $.each($("input[name='question-0']:checked"), function() {
+                if ($(this).val() === questions[0].correctans) {
+                  counter.correct++;
+                }
+                else {
+                counter.incorrect++;
 
-    
+                $.each($("input[name='question-0']:checked"), function() {
+                    console.log($(this).val());
+                        });
+                }
+              })
+
+
+
+
+        // function fivemin() {
+        //     var timer = setInterval(fivemin, 10000 * 5);
+        //     timer--;
+        //     $("#timer").append(timer)
+        // }
+        // fivemin();
+        // console.log(fivemin)
         
-        //call the function
-
+            }
+            
+        
   
-    
+    };
+  
+    //call the function
+  $("#submit").click(function(){
+        start();
+  })
 
 
 });
