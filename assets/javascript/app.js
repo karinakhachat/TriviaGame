@@ -2,6 +2,7 @@
 $(document).ready(function () {
     var timer = 50000;
     var counter = 0;
+    var unchecked=0;
     var correctans = 0;
     var wrongans = 0;
     var interval;
@@ -89,14 +90,20 @@ $(document).ready(function () {
     function Compare() {
         $.each($("input[name='question-0']:checked"), function () {
             if ($(this).val() === questions[i].correctans) {
-                counter.correct++;
+                counter.correctans++;
             }
             else {
-                counter.incorrect++;
+                counter.wrongans++;
             }
             
         })
-    }
+        $.each($("input[name='question-0']:unchecked"), function () {
+            counter.unchecked++;
+            
+   
+        })
+
+
 
 
 });
