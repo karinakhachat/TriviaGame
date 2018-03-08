@@ -69,17 +69,14 @@ $(document).ready(function () {
 
             }
         }
-        interval= setInterval(10000 * 5);               
+        interval= setInterval(10000 * 5); //doing weird stuff               
         $("#timer").text(interval)
         $("#submit").hide();
-        $("#results").append(btn);
-    }
-
-    var btn = document.createElement("BUTTON");  
-    btn.id='button';      
-    var t = document.createTextNode("CLICK ME");       
-    btn.appendChild(t);
-    
+        var btn = $("<button>");
+        btn.attr("id", "button")
+        btn.text("Submit")
+        $("#results").append(btn); 
+    }    
     
 
     //call the function
@@ -90,33 +87,37 @@ $(document).ready(function () {
 
     //compares the correctans with user
     function compare() { 
+        console.log("i am function")
+    
+        console.log($(".questions"));//working
+        
+        $.each($("input[class='question']:checked"), function (i) {
+            var value = $(this).val()
+            if ( value === Question.correctAns) {
+                correctans++;
+            }
+            console.log(correctans);
+            if ( value === 0) {
+                unchecked++;
+            }
+            console.log(unchecked);
+
+            if ( value != Question.correctAns) {
+                wrongans++;
+                console.log(wrongans);
+            }        
+
+        })
+
+         //the only working part of the function   
         $(".questions").empty();
         $("#results").empty();
-
-        $.each($("input[class='question']:checked"), function () {
-            for (var i = 0; i < Questions[i].correctAns; i++)
-            console.log(i);
-            if ($(this).val() === Questions[i].correctAns) {
-                correctans++;
-                console.log(correctans)
-            }
-            else {
-                wrongans++;
-            }
-
-        })
-        $.each($("input[class='question']:unchecked"), function () {
-            unchecked++;
-        })
-
-        $("#results").append();  //the only working part of the function   
-    
     }
-    //$("#button").click(function(){
+    $(document).on('click', '#button' , function(){
         compare();
-
+console.log("click")
     
-    //})
+    })
 
 
 
