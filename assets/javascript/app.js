@@ -6,7 +6,7 @@ $(document).ready(function () {
     var wrongans = 0;
     var interval;
 
-
+    $('#Trivia').addClass('animated flash');
 
     var Questions = [{
         question: "What is the only state in America that begins with the letter p?",
